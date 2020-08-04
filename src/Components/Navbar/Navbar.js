@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {AppBar, Toolbar, IconButton, Typography, InputBase} from "@material-ui/core";
+import {AppBar, Toolbar, IconButton, Typography, InputBase, Card} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from '@material-ui/icons/Search';
 import * as ApiManager from "../../Services/ApiManager";
@@ -9,13 +9,15 @@ import useStyles from "./Styles";
 export default function SearchAppBar() {
   const classes = useStyles();
   const [data, setData] = useState([]);
-  const [query, setQuery] = useState("");
-  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("love");
+  const [search, setSearch] = useState("love");
   useEffect(() => {
     async function getData() {
       const result = await ApiManager.listMovies(search);
-      setData(result);
+     setData(result)
       console.log("resuuult con hooks", result);
+      
+      
     }
     getData();
   }, [search]);
@@ -52,7 +54,14 @@ export default function SearchAppBar() {
           </div>
         </Toolbar>
       </AppBar>
-      <Cards title={"holi"} />
+      
+            {data.Search !== undefined ? 
+                        data.Search.map(item => (
+                            <li key={item.imdbID}>
+                              <a href={item.Title}>{item.Title}</a>
+                            </li>
+                          )) : "404"
+            }
     </div>
   );
 }
