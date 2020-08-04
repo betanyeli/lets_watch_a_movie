@@ -19,17 +19,17 @@ export const Cards=({props}) => {
   return (
     <Card className={classes.root}>
       <CardHeader
-        title={props}
-        subheader={props}
+        title={props.Title}
+        subheader={props.Year}
       />
       <CardMedia
         className={classes.media}
-        image={props}
-        title={props}
+        image={props.Poster}
+        title={props.Title}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-         {props}
+         {props.Title}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -50,13 +50,7 @@ export const Cards=({props}) => {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>{props}</Typography>
-          <Typography paragraph>
-           {props}
-          </Typography>
-          <Typography paragraph>
-           {props}
-          </Typography>
+          <Typography paragraph>{props.Title}</Typography>
 
         </CardContent>
       </Collapse>

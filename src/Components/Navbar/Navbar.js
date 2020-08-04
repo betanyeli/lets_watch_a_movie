@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {AppBar, Toolbar, IconButton, Typography, InputBase, Card} from "@material-ui/core";
+import {AppBar, Toolbar, IconButton, Typography, InputBase} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from '@material-ui/icons/Search';
 import * as ApiManager from "../../Services/ApiManager";
@@ -23,6 +23,7 @@ export default function SearchAppBar() {
   }, [search]);
 
   return (
+      <React.Fragment>
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
@@ -54,14 +55,19 @@ export default function SearchAppBar() {
           </div>
         </Toolbar>
       </AppBar>
-      
+
+    </div>
+    <div className={classes.cardContainer}>
             {data.Search !== undefined ? 
                         data.Search.map(item => (
-                            <li key={item.imdbID}>
-                              <a href={item.Title}>{item.Title}</a>
-                            </li>
+                            <Cards key={item.imdbID} props={item} />
+                            
+                            // <li key={item.imdbID}>
+                            //   <a href={item.Title}>{item.Title}</a>
+                            // </li>
                           )) : "404"
             }
-    </div>
+            </div>
+    </React.Fragment>
   );
 }
