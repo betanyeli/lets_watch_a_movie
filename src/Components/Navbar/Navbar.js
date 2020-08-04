@@ -82,21 +82,19 @@ export default function SearchAppBar() {
   const classes = useStyles();
   const [data, setData] = useState([]);
   const [query, setQuery] = useState('');
+  const [search, setSearch] = useState('');
   useEffect(() => {
       async function getData(){
-        const result = await ApiManager.listMovies(query)
+        const result = await ApiManager.listMovies(search)
         setData(result)
         console.log("resuuult con hooks", result)
    //algo
       }
       getData()
      
-  }, [query])
+  }, [search])
 
-  function searchQuery(event) {
-    const value = event.target.value
-    setQuery(value)
-}
+
 
   return (
     <div className={classes.root}>
@@ -125,17 +123,12 @@ export default function SearchAppBar() {
               }}
               inputProps={{ 'aria-label': 'search' }}
               value={query}
-              //onChange={event => setQuery(event.target.value)}
-              
+              onChange={event => setQuery(event.target.value)}
+              //onKeyPress={searchQuery}
             />
-                      <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
+                 <button type="button" onClick={() => setSearch(query)}>
+        Search
+      </button>     
           </div>
         </Toolbar>
       </AppBar>
