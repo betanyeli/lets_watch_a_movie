@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-letswatchamovie-dev-214230-authRole",
+            "UnauthRoleArn": "arn:aws:iam::115173459092:role/amplify-letswatchamovie-dev-214230-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::115173459092:role/amplify-letswatchamovie-dev-214230-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-letswatchamovie-dev-214230-deployment",
+            "UnauthRoleName": "amplify-letswatchamovie-dev-214230-unauthRole",
+            "StackName": "amplify-letswatchamovie-dev-214230",
+            "StackId": "arn:aws:cloudformation:us-east-1:115173459092:stack/amplify-letswatchamovie-dev-214230/c67e8110-d5f3-11ea-b5d7-0a99e59b1983",
+            "AmplifyAppId": "d3fl9eb3av7ddi"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d3fl9eb3av7ddi",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}
