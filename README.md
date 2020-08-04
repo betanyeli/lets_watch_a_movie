@@ -1,68 +1,60 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Let's watch a movie!
 
-## Available Scripts
+**Sprint duration:** 
+Two days. 03-08 to 05-08
+**Sprint goal**:
+Using the omdbapi API http://www.omdbapi.com/ create a ReactApp that allows you to search for movies by title (ex: Batman) and display a list of results (title, year and image).
 
-In the project directory, you can run:
+##Let's start! [https://dev.d3fl9eb3av7ddi.amplifyapp.com/](https://dev.d3fl9eb3av7ddi.amplifyapp.com/)
 
-### `npm start`
+ - Clone this repository.
+ - Go to *lets_watch_a_movie* folder
+ - Add an .env file in root folder (let's watch a movie), and add the following enviroment variable: REACT_APP_APIKEY="http://www.omdbapi.com/?apikey=[yourkey]&"
+ - Run in terminal `npm install`
+ - Run in terminal `npm start`
+ - Happy hacking! <3 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Functional requirements
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Each result must be clickable and when clicked it will show more details of the result according to the data available in the API. In addition, the application must allow you to bookmark each of the movies (save them in localStorage) and be able to see a list of them.
 
-### `npm test`
+## Non functional requirements
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   Responsive Web App.
+-   Enviroment variables must be hidden,
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Frontend:
+ - React Js
+ - JavaScript ES6
+ - MaterialUI (UI CSS Framework)
+ - Axios (Http request)
+ - Async Functions & Promises
+ - OMDB Api
+ 
+### Backend:
+- Amplify AWS CloudFront & S3
 
-### `npm run eject`
+### Prototipo de baja fidelidad:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#InProgress.-
+## :collision: AWS CLOUDFRONT DEPLOY :collision:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- :warning: Asegúrate de tener una cuenta de AWS services  :warning:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Ejecuta en la terminal `npm install -g @aws-amplify/cli`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-  `Amplify Configure` e inicia sesión en tu  cuenta de AWS 
 
-## Learn More
+- `Amplify Init` en la raíz de tu proyecto, para inicializarlo
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Ejecuta `Amplify add hosting`  para agregar el servicio de hosting.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Select AWS CloudFront & S3 Bucket
 
-### Code Splitting
+- Select DEV option for HTTP or PROD for HTTPS.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Ejecuta `Amplify publish`
