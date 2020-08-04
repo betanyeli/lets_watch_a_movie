@@ -3,6 +3,7 @@ import {AppBar, Toolbar, IconButton, Typography, InputBase} from "@material-ui/c
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from '@material-ui/icons/Search';
 import * as ApiManager from "../../Services/ApiManager";
+import Cards from '../Cards/Cards'
 import useStyles from "./Styles";
 
 export default function SearchAppBar() {
@@ -51,6 +52,7 @@ export default function SearchAppBar() {
           </div>
         </Toolbar>
       </AppBar>
+      <Cards title={"holi"} />
     </div>
   );
 }

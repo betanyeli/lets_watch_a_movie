@@ -7,7 +7,7 @@ export const listMovies = async (query) => {
     try {
         const result = await axios.get(`${api_endpoint}t=${query}`)
         console.log("Result =>", result)
-        return result
+        return result.data
     } catch (error) {
         return error
     }

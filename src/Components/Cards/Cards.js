@@ -8,7 +8,7 @@ import useStyles from "./Styles";
 
 
 
-export default function RecipeReviewCard() {
+export const Cards=({props}) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -19,19 +19,17 @@ export default function RecipeReviewCard() {
   return (
     <Card className={classes.root}>
       <CardHeader
-
-
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={props}
+        subheader={props}
       />
       <CardMedia
         className={classes.media}
-        image="/static/images/cards/paella.jpg"
-        title="Paella dish"
+        image={props}
+        title={props}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-         Holaijsias
+         {props}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -52,21 +50,18 @@ export default function RecipeReviewCard() {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
+          <Typography paragraph>{props}</Typography>
           <Typography paragraph>
-           Holi
-          </Typography>
-          <Typography paragraph>
-            Holi
+           {props}
           </Typography>
           <Typography paragraph>
-          Holo
+           {props}
           </Typography>
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
-          </Typography>
+
         </CardContent>
       </Collapse>
     </Card>
   );
 }
+
+export default Cards;
