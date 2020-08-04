@@ -1,100 +1,23 @@
-// import React from 'react';
-
-// export class Navbar extends React.Component{
-//     render(){
-//         return (
-//             <div>
-//                 <p>Holi soy un navbar!</p>
-//             </div>
-//         )
-//     }
-// }
-
-// export default Navbar;
-
-import React, {useState, useEffect} from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import { fade, makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
+import React, { useState, useEffect } from "react";
+import {AppBar, Toolbar, IconButton, Typography, InputBase} from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from '@material-ui/icons/Search';
-import * as ApiManager from '../../Services/ApiManager'
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
-  },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
-      width: 'auto',
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inputRoot: {
-    color: 'inherit',
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
-    },
-  },
-}));
+import * as ApiManager from "../../Services/ApiManager";
+import useStyles from "./Styles";
 
 export default function SearchAppBar() {
   const classes = useStyles();
   const [data, setData] = useState([]);
-  const [query, setQuery] = useState('');
-  const [search, setSearch] = useState('');
+  const [query, setQuery] = useState("");
+  const [search, setSearch] = useState("");
   useEffect(() => {
-      async function getData(){
-        const result = await ApiManager.listMovies(search)
-        setData(result)
-        console.log("resuuult con hooks", result)
-   //algo
-      }
-      getData()
-     
-  }, [search])
-
-
+    async function getData() {
+      const result = await ApiManager.listMovies(search);
+      setData(result);
+      console.log("resuuult con hooks", result);
+    }
+    getData();
+  }, [search]);
 
   return (
     <div className={classes.root}>
@@ -109,26 +32,22 @@ export default function SearchAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            Let's watch a movie :D
           </Typography>
           <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
             <InputBase
-              placeholder="Search…"
+              placeholder="Press Search Button to Start…"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
-              inputProps={{ 'aria-label': 'search' }}
+              inputProps={{ "aria-label": "search" }}
               value={query}
-              onChange={event => setQuery(event.target.value)}
-              //onKeyPress={searchQuery}
+              onChange={(event) => setQuery(event.target.value)}
             />
-                 <button type="button" onClick={() => setSearch(query)}>
-        Search
-      </button>     
+            <IconButton aria-label="delete" onClick={() => setSearch(query)}>
+              <SearchIcon />
+            </IconButton>
           </div>
         </Toolbar>
       </AppBar>
