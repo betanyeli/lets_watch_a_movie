@@ -1,18 +1,36 @@
-# Let's watch a movie!
+# Let's watch a movie! :movie_camera:
 
-**Sprint duration:** 
+Deploy: [https://dev.d3fl9eb3av7ddi.amplifyapp.com/](https://dev.d3fl9eb3av7ddi.amplifyapp.com/)
+  
+**Sprint duration:** :calendar:
+
 Two days. 03-08 to 05-08
-**Sprint goal**:
+
+**Sprint goal**: :bar_chart:
+
 Using the omdbapi API http://www.omdbapi.com/ create a ReactApp that allows you to search for movies by title (ex: Batman) and display a list of results (title, year and image).
 
-##Let's start! [https://dev.d3fl9eb3av7ddi.amplifyapp.com/](https://dev.d3fl9eb3av7ddi.amplifyapp.com/)
+**Kanban board** : :chart_with_downwards_trend:
+You can review the pending requirements in the "TO-DO" column
+[https://github.com/betanyeli/lets_watch_a_movie/projects/1](https://github.com/betanyeli/lets_watch_a_movie/projects/1)
 
- - Clone this repository.
- - Go to *lets_watch_a_movie* folder
- - Add an .env file in root folder (let's watch a movie), and add the following enviroment variable: REACT_APP_APIKEY="http://www.omdbapi.com/?apikey=[yourkey]&"
- - Run in terminal `npm install`
- - Run in terminal `npm start`
- - Happy hacking! <3 
+  
+
+### Let's start!  :smiley:
+
+- Clone this repository.
+
+- Go to *lets_watch_a_movie* folder
+
+- Add an .env file in root folder (let's watch a movie), and add the following enviroment variable: REACT_APP_DATA_APIKEY="http://www.omdbapi.com/?apikey=[yourkey]&"
+
+- Run in terminal `npm install`
+
+- Run in terminal `npm start`
+
+- Happy hacking! <3
+
+  
 
 ## Functional requirements
 
@@ -20,41 +38,33 @@ Each result must be clickable and when clicked it will show more details of the 
 
 ## Non functional requirements
 
--   Responsive Web App.
--   Enviroment variables must be hidden,
+- Responsive Web App.
+- Enviroment variables must be hidden,
 
-
+  
 ## Tech Stack
 
-
 ### Frontend:
- - React Js
- - JavaScript ES6
- - MaterialUI (UI CSS Framework)
- - Axios (Http request)
- - Async Functions & Promises
- - OMDB Api
- 
+
+- React Js with Hooks State management
+
+- JavaScript ES6
+
+- MaterialUI (UI CSS Framework)
+
+- Axios (Http request)
+
+- Async Functions & Promises
+
+- OMDB Api
+
 ### Backend:
 - Amplify AWS CloudFront & S3
+### :scroll: low fidelity prototype: :scroll:
+-Pending... :construction:
 
-### Prototipo de baja fidelidad:
+### :rainbow: color palette :rainbow:
+![palette_color](src/Assets/palette.PNG)
 
-#InProgress.-
-## :collision: AWS CLOUDFRONT DEPLOY :collision:
 
-- :warning: Asegúrate de tener una cuenta de AWS services  :warning:
-
-- Ejecuta en la terminal `npm install -g @aws-amplify/cli`
-
--  `Amplify Configure` e inicia sesión en tu  cuenta de AWS 
-
-- `Amplify Init` en la raíz de tu proyecto, para inicializarlo
-
-- Ejecuta `Amplify add hosting`  para agregar el servicio de hosting.
-
-- Select AWS CloudFront & S3 Bucket
-
-- Select DEV option for HTTP or PROD for HTTPS.
-
-- Ejecuta `Amplify publish`
+Develop with love by Beta :heart_eyes:
