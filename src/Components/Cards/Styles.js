@@ -1,6 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { red } from '@material-ui/core/colors';
-import { findByLabelText } from '@testing-library/react';
+
 
 export const useStyles = makeStyles((theme) => ({
     root: {
@@ -12,7 +11,7 @@ export const useStyles = makeStyles((theme) => ({
     },
     media: {
       height: 0,
-      paddingTop: '56.25%', // 16:9
+      paddingTop: '36.25%', // 16:9
     },
     expand: {
       transform: 'rotate(0deg)',
@@ -23,10 +22,7 @@ export const useStyles = makeStyles((theme) => ({
     },
     expandOpen: {
       transform: 'rotate(180deg)',
-    },
-    avatar: {
-      backgroundColor: red[500],
-    },
+    }
 
   }));
 

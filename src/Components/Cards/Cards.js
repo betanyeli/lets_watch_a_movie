@@ -4,6 +4,7 @@ import {Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, IconBut
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import useStyles from "./Styles";
+import NotFoundImg from '../../Assets/404.png';
 
 
 
@@ -24,7 +25,7 @@ export const Cards=({props}) => {
       />
       <CardMedia
         className={classes.media}
-        image={props.Poster}
+        image={NotFoundImg}
         title={props.Title}
       />
       <CardContent>
