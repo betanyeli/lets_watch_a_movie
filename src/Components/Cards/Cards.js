@@ -25,16 +25,16 @@ export const Cards=({props}) => {
       />
       <CardMedia
         className={classes.media}
-        image={NotFoundImg}
-        title={props.Title}
+        image={props.Poster === "N/A" ? NotFoundImg : props.Poster}
+        title={props.Actors}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-         {props.Title}
+         {props.Genre}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton color="secondary" aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
 
@@ -51,7 +51,7 @@ export const Cards=({props}) => {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>{props.Title}</Typography>
+          <Typography paragraph>{props.Plot}</Typography>
 
         </CardContent>
       </Collapse>
