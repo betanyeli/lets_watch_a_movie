@@ -1,10 +1,17 @@
 import { fade, makeStyles } from '@material-ui/core/styles';
 export const useStyles = makeStyles((theme) => ({
     root: {
-      flexGrow: 1,
+      flexGrow: 1, 
+    },
+    background:{
+      color:'#fff',
+      backgroundColor:' #b53f88'
     },
     menuButton: {
       marginRight: theme.spacing(2),
+    },
+    favButton: {
+      color:'red'
     },
     title: {
       flexGrow: 1,
