@@ -52,9 +52,9 @@ export const useStyles = makeStyles((theme) => ({
         },
       },
     },
-  //   cardContainer: {
-  //     display: 'flex'
-  // }
+    cardContainer: {
+      marginTop: '10px', 
+  }
   }));
 
   export default useStyles;

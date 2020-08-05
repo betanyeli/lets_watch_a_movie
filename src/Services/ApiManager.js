@@ -6,7 +6,7 @@ const api_endpoint = process.env.REACT_APP_DATA_APIKEY;
 
 export const listMovies = async (query) => {
     try {
-        const result = await axios.get(`${api_endpoint}s=${query}&plot=full`)
+        const result = await axios.get(`${api_endpoint}s=${query}&page=100`)
         console.log("Result =>", result)
         return result.data
     } catch (error) {

@@ -5,6 +5,10 @@ import { findByLabelText } from '@testing-library/react';
 export const useStyles = makeStyles((theme) => ({
     root: {
       maxWidth: 345,
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      margin: 'auto',
     },
     media: {
       height: 0,
